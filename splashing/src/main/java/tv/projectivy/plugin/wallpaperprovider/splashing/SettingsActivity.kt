@@ -1,4 +1,4 @@
-package tv.projectivy.plugin.wallpaperprovider.sample
+package tv.projectivy.plugin.wallpaperprovider.splashing
 
 import android.os.Bundle
 import androidx.fragment.app.FragmentActivity

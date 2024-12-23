@@ -6,11 +6,11 @@ plugins {
 }
 
 android {
-    namespace = "tv.projectivy.plugin.wallpaperprovider.sample"
+    namespace = "tv.projectivy.plugin.wallpaperprovider.splashing"
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "tv.projectivy.plugin.wallpaperprovider.sample"
+        applicationId = "tv.projectivy.plugin.wallpaperprovider.splashing"
         minSdk = 23
         targetSdk = 35
         versionCode = 1

@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name" translatable="false">Projectivy Splashing Wallpapers</string>
+    <string name="plugin_name">Unsplash Images</string>
+    <string name="plugin_description">Fetch Wallpapers from Unsplash.</string>
+    <string name="plugin_uuid" translatable="false">05f10c81-d001-45e7-b9c3-0ed8c63d443c</string>
+
+    <!-- Setting parameters -->
+    <string name="settings">Settings</string>
+    <string name="setting_mode_title">Mode</string>
+    <string name="setting_mode_title_collection">By Collection</string>
+    <string name="setting_mode_title_random">Random Image</string>
+    <string name="setting_mode_title_search">Search Term</string>
+    <string name="setting_collection_id_title">Collection ID</string>
+    <string name="setting_search_term_title">Search Term</string>
+</resources>
