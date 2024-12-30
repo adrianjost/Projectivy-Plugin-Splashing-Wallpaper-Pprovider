@@ -1,4 +1,4 @@
-# Projectivy Plugin: Unsplash Wallpaper Provider
+# Projectivy Plugin: Splashing Wallpaper Provider
 
 This is a fork of the [Projectivy Launcher sample wallpaper provider plugin](https://github.com/spocky/projectivy-plugin-wallpaper-provider), adapted to fetch images from Unsplash.
 
