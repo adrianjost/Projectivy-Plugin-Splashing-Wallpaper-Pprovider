@@ -1,4 +1,4 @@
-package tv.projectivy.plugin.wallpaperprovider.sample
+package tv.projectivy.plugin.wallpaperprovider.splashing
 
 import android.content.Context
 import android.content.SharedPreferences
@@ -8,8 +8,16 @@ import com.google.gson.GsonBuilder
 import com.google.gson.ToNumberPolicy
 import com.google.gson.reflect.TypeToken
 
+enum class Mode {
+    COLLECTION,
+    RANDOM,
+    SEARCH
+}
+
 object PreferencesManager {
-    private const val IMAGE_URL_KEY = "image_url_key"
+    private const val MODE_KEY = "mode_key"
+    private const val COLLECTION_ID_KEY = "collection_id_key"
+    private const val SEARCH_TERM_KEY = "search_term_key"
 
     lateinit var preferences: SharedPreferences
 
@@ -46,9 +54,22 @@ object PreferencesManager {
             else -> throw UnsupportedOperationException("Not yet implemented")
         }
 
-    var imageUrl: String
-        get() = PreferencesManager[IMAGE_URL_KEY, "https://images.pexels.com/photos/462162/pexels-photo-462162.jpeg"]
-        set(value) { PreferencesManager[IMAGE_URL_KEY]=value }
+    var mode: String
+        get() = PreferencesManager[MODE_KEY, Mode.RANDOM.name]
+        set(value) {
+            PreferencesManager[MODE_KEY] = value
+        }
+    var collectionID: String
+        get() = PreferencesManager[COLLECTION_ID_KEY, "xLz0ZpRHYAQ"]
+        set(value) {
+            PreferencesManager[COLLECTION_ID_KEY] = value
+        }
+    var searchTerm: String
+        get() = PreferencesManager[SEARCH_TERM_KEY, "Fire"]
+        set(value) {
+            PreferencesManager[SEARCH_TERM_KEY] = value
+        }
+
 
     fun export(): String {
         return Gson().toJson(preferences.all)
@@ -65,14 +86,18 @@ object PreferencesManager {
             val editor = preferences.edit()
             editor.clear()
             map.forEach { (key: String, value: Any) ->
-                when(value) {
+                when (value) {
                     is Boolean -> editor.putBoolean(key, value)
                     is Double -> editor.putFloat(key, value.toFloat())
                     is Float -> editor.putFloat(key, value)
                     is Int -> editor.putInt(key, value)
                     is Long -> editor.putInt(key, value.toInt())
                     is String -> editor.putString(key, value)
-                    is ArrayList<*> -> editor.putStringSet(key, java.util.HashSet(value as java.util.ArrayList<String>))
+                    is ArrayList<*> -> editor.putStringSet(
+                        key,
+                        java.util.HashSet(value as java.util.ArrayList<String>)
+                    )
+
                     is Set<*> -> editor.putStringSet(key, value as Set<String>)
                 }
             }

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="plugin_name">Unsplash Bilder</string>
+    <string name="plugin_description">Nutze kostenlose Bilder von Unsplash.</string>
+    <string name="settings">Einstellungen</string>
+    <string name="setting_mode_title">Modus</string>
+    <string name="setting_mode_title_collection">Kollektion</string>
+    <string name="setting_mode_title_random">Zufälliges Bild</string>
+    <string name="setting_mode_title_search">Suchbegriff</string>
+    <string name="setting_collection_id_title">Kollektion ID</string>
+    <string name="setting_search_term_title">Suchbegriff</string>
+</resources>
